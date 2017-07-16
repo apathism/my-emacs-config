@@ -2,7 +2,19 @@
 (setq backup-inhibited t)
 
 ;; disable autosave
+(setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq auto-save-list-file-name nil)
+
+;; disable startup/splash screen
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
+
+;; delete selected on input
+(delete-selection-mode t)
+
+;; less GUI, more actuality
+(menu-bar-mode -1)
 
 ;; disable annoying modified buffers alert
 (defun my-save-buffers-kill-emacs (&optional arg)
@@ -29,7 +41,11 @@ With prefix ARG, silently save all file-visiting buffers, then kill."
        (kill-emacs)))
 (fset 'save-buffers-kill-emacs 'my-save-buffers-kill-emacs)
 
-; Tab width
+;; dired-mode
+(require 'dired)
+(setq dired-recursive-deletes 'top)
+
+; tab width
 (setq-default c-basic-offset 8
 	      c-indent-level 8
 	      c-argdecl-indent 0
@@ -41,27 +57,19 @@ With prefix ARG, silently save all file-visiting buffers, then kill."
 (setq backward-delete-char-untabify-method nil)
 (electric-indent-mode -1)
 
-; Git blame
+; git blame
 (autoload 'mo-git-blame-file "mo-git-blame" nil t)
 (autoload 'mo-git-blame-current "mo-git-blame" nil t)
 (global-set-key [?\C-c ?g ?c] 'mo-git-blame-current)
 (global-set-key [?\C-c ?g ?f] 'mo-git-blame-file)
 
-; New line at the end of the file
+; new line at the end of the file
 (setq require-final-newline t)
 
-; D Mode
-(require 'cl)
-(autoload 'd-mode "d-mode" "Major mode for editing D code." t)
-(add-to-list 'auto-mode-alist '("\\.d[i]?\\'" . d-mode))
-
+; disable auto-lineup for Pascal language
 (setq pascal-auto-lineup nil)
 
-; Rust Mode
-(autoload 'rust-mode "rust-mode" "Mode for editing Rust code." t)
-(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
-
-;; Diff mode custom colors
+;; diff mode custom colors
 (defun custom-diff-colors ()
   "update the colors for diff faces"
   (set-face-attribute
@@ -76,7 +84,6 @@ With prefix ARG, silently save all file-visiting buffers, then kill."
    'diff-context nil :foreground "white"))
 (eval-after-load "diff-mode" '(custom-diff-colors))
 
-;; Python
-   (add-hook 'python-mode-hook 'guess-style-guess-tabs-mode)
-   (add-hook 'python-mode-hook (lambda ()
-                                    (guess-style-guess-tab-width)))
+;; python
+(add-hook 'python-mode-hook 'guess-style-guess-tabs-mode)
+(add-hook 'python-mode-hook (lambda () (guess-style-guess-tab-width)))
