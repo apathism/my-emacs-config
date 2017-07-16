@@ -6,15 +6,14 @@
 (setq auto-save-default nil)
 (setq auto-save-list-file-name nil)
 
-;; disable startup/splash screen
-(setq inhibit-startup-screen t)
-(setq initial-scratch-message nil)
-
 ;; delete selected on input
 (delete-selection-mode t)
 
 ;; less GUI, more actuality
 (menu-bar-mode -1)
+
+;; no message in a new buffer
+(setq initial-scratch-message nil)
 
 ;; disable annoying modified buffers alert
 (defun my-save-buffers-kill-emacs (&optional arg)
