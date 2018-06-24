@@ -86,3 +86,6 @@ With prefix ARG, silently save all file-visiting buffers, then kill."
 ;; python
 (add-hook 'python-mode-hook 'guess-style-guess-tabs-mode)
 (add-hook 'python-mode-hook (lambda () (guess-style-guess-tab-width)))
+
+; haskell
+(require 'haskell-mode-autoloads)
