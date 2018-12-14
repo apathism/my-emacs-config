@@ -44,7 +44,7 @@ With prefix ARG, silently save all file-visiting buffers, then kill."
 (require 'dired)
 (setq dired-recursive-deletes 'top)
 
-; tab width
+;; tab width
 (setq-default c-basic-offset 8
 	      c-indent-level 8
 	      c-argdecl-indent 0
@@ -56,16 +56,16 @@ With prefix ARG, silently save all file-visiting buffers, then kill."
 (setq backward-delete-char-untabify-method nil)
 (electric-indent-mode -1)
 
-; git blame
+;; git blame
 (autoload 'mo-git-blame-file "mo-git-blame" nil t)
 (autoload 'mo-git-blame-current "mo-git-blame" nil t)
 (global-set-key [?\C-c ?g ?c] 'mo-git-blame-current)
 (global-set-key [?\C-c ?g ?f] 'mo-git-blame-file)
 
-; new line at the end of the file
+;; new line at the end of the file
 (setq require-final-newline t)
 
-; disable auto-lineup for Pascal language
+;; disable auto-lineup for Pascal language
 (setq pascal-auto-lineup nil)
 
 ;; diff mode custom colors
@@ -87,5 +87,8 @@ With prefix ARG, silently save all file-visiting buffers, then kill."
 (add-hook 'python-mode-hook 'guess-style-guess-tabs-mode)
 (add-hook 'python-mode-hook (lambda () (guess-style-guess-tab-width)))
 
-; haskell
+;; haskell
 (require 'haskell-mode-autoloads)
+
+;; ejudge charset alias
+(define-coding-system-alias 'UTF-8 'utf-8)
