@@ -12,9 +12,6 @@
 ;; less GUI, more actuality
 (menu-bar-mode -1)
 
-;; no message in a new buffer
-(setq initial-scratch-message nil)
-
 ;; disable annoying modified buffers alert
 (defun my-save-buffers-kill-emacs (&optional arg)
   "Offer to save each buffer(once only), then kill this Emacs process.
@@ -92,3 +89,6 @@ With prefix ARG, silently save all file-visiting buffers, then kill."
 
 ;; ejudge charset alias
 (define-coding-system-alias 'UTF-8 'utf-8)
+
+;; color theme
+(load-theme 'wombat)
