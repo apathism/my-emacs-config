@@ -1,3 +1,5 @@
-(provide 'apathism-themes)
+;; base / apathism-themes
 
 (load-theme 'wombat)
+
+(provide 'apathism-themes)

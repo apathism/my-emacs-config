@@ -1,4 +1,4 @@
-(provide 'apathism-haskell)
+;; package / apathism-haskell
 
 (use-package haskell-mode
   :config
@@ -6,3 +6,5 @@
   (require 'haskell-doc)
   (require 'haskell-commands)
   )
+
+(provide 'apathism-haskell)

@@ -1,4 +1,4 @@
-(provide 'apathism-gdb)
+;; package / apathism-gdb
 
 (use-package gdb-mi
   :quelpa (gdb-mi :fetcher git
@@ -35,3 +35,5 @@
    (if (gdb--infer-session) 'gdb-kill-session 'gdb-executable)))
 
 (global-set-key (kbd "C-c C-g") 'apathism/toggle-gdb-session)
+
+(provide 'apathism-gdb)

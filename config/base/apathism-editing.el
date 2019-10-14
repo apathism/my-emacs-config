@@ -1,4 +1,4 @@
-(provide 'apathism-editing)
+;; base / apathism-editing
 
 (setq require-final-newline t)
 (setq-default indent-tabs-mode t
@@ -7,3 +7,5 @@
 			  )
 (define-key global-map (kbd "RET") 'newline-and-indent)
 (setq-default show-trailing-whitespace t)
+
+(provide 'apathism-editing)

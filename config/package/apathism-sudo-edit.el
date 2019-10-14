@@ -1,4 +1,4 @@
-(provide 'apathism-sudo-edit)
+;; package / apathism-sudo-edit
 
 (defun apathism/maybe-sudo-edit ()
   (when (and (not (file-writable-p buffer-file-name))
@@ -13,3 +13,5 @@
   :bind (:map ctl-x-map ("M-s" . sudo-edit))
   :hook ((find-file . apathism/maybe-sudo-edit))
   )
+
+(provide 'apathism-sudo-edit)

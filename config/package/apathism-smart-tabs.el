@@ -1,4 +1,4 @@
-(provide 'apathism-smart-tabs)
+;; package / apathism-smart-tabs
 
 (use-package smart-tabs-mode
   :init
@@ -10,3 +10,5 @@
    'python
    )
   )
+
+(provide 'apathism-smart-tabs)

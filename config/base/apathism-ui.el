@@ -1,4 +1,4 @@
-(provide 'apathism-ui)
+;; base / apathism-ui
 
 (menu-bar-mode -1)
 
@@ -32,3 +32,5 @@
 		   (funcall confirm-kill-emacs "Really exit Emacs? "))
        (kill-emacs)))
 (fset 'save-buffers-kill-emacs 'my-save-buffers-kill-emacs)
+
+(provide 'apathism-ui)

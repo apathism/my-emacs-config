@@ -1,4 +1,4 @@
-(provide 'apathism-packages)
+;; base / apathism-packages
 
 ;; Setting up MELPA and installing use-package
 (require 'package)
@@ -24,3 +24,5 @@
   :config
   (setq quelpa-update-melpa-p nil)
   )
+
+(provide 'apathism-packages)

@@ -1,4 +1,4 @@
-(provide 'apathism-ivy)
+;; package / apathism-ivy
 
 (use-package counsel
   :diminish ivy-mode counsel-mode
@@ -9,3 +9,5 @@
   (setq ivy-count-format "(%d/%d) "
 		ivy-use-virtual-buffers t)
   )
+
+(provide 'apathism-ivy)

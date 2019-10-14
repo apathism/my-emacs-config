@@ -1,4 +1,4 @@
-(provide 'apathism-compile)
+;; base / apathism-compile
 
 (require 'compile)
 
@@ -28,3 +28,5 @@
 			  )
 			)
 		  )
+
+(provide 'apathism-compile)

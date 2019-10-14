@@ -1,5 +1,3 @@
-(provide 'init)
-
 ;; Base configuration
 (add-to-list 'load-path "~/.emacs.d/config/base")
 (require 'apathism-backups)
@@ -22,3 +20,5 @@
 (require 'apathism-markdown)
 (require 'apathism-gdb)
 (require 'apathism-haskell)
+
+(provide 'init)
