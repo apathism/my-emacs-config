@@ -16,4 +16,5 @@
 (require 'apathism-neotree)
 (require 'apathism-git)
 (require 'apathism-ivy)
+(require 'apathism-sudo-edit)
 (require 'apathism-haskell)
