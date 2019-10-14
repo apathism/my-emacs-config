@@ -18,3 +18,9 @@
 ;; Remove annoying customize settings in a seperate file
 (setq custom-file "~/.emacs.d/customize.el")
 (load custom-file 'noerror)
+
+;; Quelpa
+(use-package quelpa-use-package
+  :config
+  (setq quelpa-update-melpa-p nil)
+  )

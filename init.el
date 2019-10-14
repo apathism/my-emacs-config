@@ -7,14 +7,18 @@
 (require 'apathism-ui)
 (require 'apathism-themes)
 (require 'apathism-editing)
+(require 'apathism-compile)
 (require 'apathism-packages)
 
 ;; Package configuration
 (add-to-list 'load-path "~/.emacs.d/config/package")
 (require 'apathism-smart-tabs)
+(require 'apathism-sudo-edit)
 (require 'apathism-doom-modeline)
 (require 'apathism-neotree)
-(require 'apathism-git)
 (require 'apathism-ivy)
-(require 'apathism-sudo-edit)
+
+(require 'apathism-git)
+(require 'apathism-markdown)
+(require 'apathism-gdb)
 (require 'apathism-haskell)
