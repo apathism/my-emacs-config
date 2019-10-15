@@ -18,8 +18,9 @@
   (require 'apathism-neotree)
   (require 'apathism-ivy)
 
-  (require 'apathism-flycheck)
   (require 'apathism-git)
+  (require 'apathism-flycheck)
+  (require 'apathism-company)
   (require 'apathism-gdb)
 
   (require 'apathism-markdown)
