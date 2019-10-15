@@ -1,13 +1,9 @@
 ;; package / apathism-gdb
 
-(use-package gdb-mi
-  :quelpa (gdb-mi :fetcher git
-				  :url "https://github.com/weirdNox/emacs-gdb.git"
-				  :files ("*.el" "*.c" "*.h" "Makefile"))
-  :init
-  (fmakunbound 'gdb)
-  (fmakunbound 'gdb-enable-debug)
-  )
+(defun apathism/toggle-gdb-session ()
+  (interactive)
+  (call-interactively
+   (if (gdb--infer-session) 'gdb-kill-session 'gdb-executable)))
 
 (defun apathism/gdb-setup-windows (session)
   (with-selected-frame (gdb--session-frame session)
@@ -27,13 +23,15 @@
       (gdb--set-window-buffer bottom-right (gdb--variables-get-buffer session))
       (gdb--display-source-buffer top-left))))
 
-(setq gdb-window-setup-function #'apathism/gdb-setup-windows)
-
-(defun apathism/toggle-gdb-session ()
-  (interactive)
-  (call-interactively
-   (if (gdb--infer-session) 'gdb-kill-session 'gdb-executable)))
-
-(global-set-key (kbd "C-c C-g") 'apathism/toggle-gdb-session)
+(use-package gdb-mi
+  :bind (("C-c C-g" . 'apathism/toggle-gdb-session))
+  :quelpa (gdb-mi :fetcher git
+				  :url "https://github.com/weirdNox/emacs-gdb.git"
+				  :files ("*.el" "*.c" "*.h" "Makefile"))
+  :init
+  (fmakunbound 'gdb)
+  (fmakunbound 'gdb-enable-debug)
+  (setq gdb-window-setup-function #'apathism/gdb-setup-windows)
+  )
 
 (provide 'apathism-gdb)

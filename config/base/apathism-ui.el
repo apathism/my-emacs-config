@@ -33,4 +33,6 @@
        (kill-emacs)))
 (fset 'save-buffers-kill-emacs 'my-save-buffers-kill-emacs)
 
+(put 'dired-find-alternate-file 'disabled nil)
+
 (provide 'apathism-ui)
