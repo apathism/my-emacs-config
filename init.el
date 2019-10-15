@@ -18,10 +18,12 @@
   (require 'apathism-neotree)
   (require 'apathism-ivy)
 
-  (require 'apathism-markdown)
-  (require 'apathism-yaml)
+  (require 'apathism-flycheck)
   (require 'apathism-git)
   (require 'apathism-gdb)
+
+  (require 'apathism-markdown)
+  (require 'apathism-yaml)
   (require 'apathism-haskell)
 )
 
