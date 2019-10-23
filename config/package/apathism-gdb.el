@@ -25,9 +25,7 @@
 
 (use-package gdb-mi
   :bind (("C-c C-g" . 'apathism/toggle-gdb-session))
-  :quelpa (gdb-mi :fetcher git
-				  :url "https://github.com/weirdNox/emacs-gdb.git"
-				  :files ("*.el" "*.c" "*.h" "Makefile"))
+  :straight (:host github :repo "weirdNox/emacs-gdb" :files ("*.el" "*.c" "*.h" "Makefile"))
   :init
   (fmakunbound 'gdb)
   (fmakunbound 'gdb-enable-debug)

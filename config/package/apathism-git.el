@@ -1,6 +1,5 @@
 ;; package / apathism-git
 
-(use-package magit
-  :defer t)
+(use-package magit)
 
 (provide 'apathism-git)
